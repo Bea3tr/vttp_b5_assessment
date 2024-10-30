@@ -1,7 +1,6 @@
 package vttp.batch5.sdf.task02;
 
 import java.io.*;
-import java.sql.Blob;
 import java.util.*;
 
 public class Main {
@@ -129,17 +128,6 @@ public class Main {
 			return -1;
 		else
 			return 0;
-	}
-
-	public static int numMovesLeft(String[][] board) {
-		int movesLeft = 0;
-		for (int i = 0; i < board.length; i++) {
-			for (int j = 0; j < board[0].length; j++) {
-				if (board[i][j].equals(BLANK))
-					movesLeft++;
-			}
-		}
-		return movesLeft;
 	}
 
 	public static void printBoard(String[][] board) {

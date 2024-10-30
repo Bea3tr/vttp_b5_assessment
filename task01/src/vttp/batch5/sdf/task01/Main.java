@@ -46,10 +46,11 @@ public class Main {
 			List<BikeEntry> topFiveDays = sorted.subList(0, 5);
 			String[] POSITION = { "highest", "second highest", "third highest", "fourth highest", "fifth highest" };
 			String[] WEATHER = { "Clear, Few clouds, Partly cloudy, Partly cloudy",
-					"Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist",
-					"Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds",
-					"Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog" };
+								"Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist",
+								"Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds",
+								"Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog" };
 
+			// Print output to prompt
 			for (int i = 0; i < topFiveDays.size(); i++) {
 				BikeEntry be = topFiveDays.get(i);
 				String pos = POSITION[i];
@@ -60,7 +61,7 @@ public class Main {
 				String weather = WEATHER[be.getWeather() - 1];
 				String holiday = (be.isHoliday()) ? "a holiday" : "not a holiday";
 				System.out.printf(
-						"The %s recorded number of cyclists was in %s,on a %s in the month of %s. There were a total of %d cyclists. The weather was %s. %s was %s\n\n",
+						"The %s recorded number of cyclists was in %s, on a %s in the month of %s. There were a total of %d cyclists. The weather was %s. %s was %s\n\n",
 						pos, season, day, month, total, weather, day, holiday);
 			}
 		} catch (FileNotFoundException ex) {
@@ -68,6 +69,5 @@ public class Main {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-
 	}
 }

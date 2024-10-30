@@ -110,13 +110,12 @@ public class Main {
 				countO = 0;
 				countS = 0;
 			}	
-			for(int i = board.length - 1; i >= 0; i--) {
-				for(int j = 0; j < board[0].length; j++) {
-					if(board[i][j].equals(OPPONENT))
-						countO++;
-					else if (board[i][j].equals(BLANK))
-						countS++;
-				}
+			int[][] diaPos = {{2, 0}, {1, 1}, {0, 2}};
+			for(int[] pos : diaPos) {
+				if(board[pos[0]][pos[1]].equals(OPPONENT))
+					countO++;
+				else if (board[pos[0]][pos[1]].equals(BLANK))
+					countS++;
 			}
 			if (countO == 2 && countS == 1)
 					OWin = true;
